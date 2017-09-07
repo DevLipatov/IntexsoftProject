@@ -1,2 +1,16 @@
 # IntexsoftProject
-Intexsoft traineeship project
+Intexsoft full-stack traineeship project
+
+Technologies:
+
+    -Spring
+
+    -Hibernate
+
+    -Jpa
+
+    -Tomcat
+
+    -Angular
+    
+Security
