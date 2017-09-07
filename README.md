@@ -1,0 +1,2 @@
+# IntexsoftProject
+Intexsoft traineeship project
