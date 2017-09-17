@@ -12,10 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class ThemeServiceImpl extends AbstractEntityServiceImpl<Theme> {
 
-    private ThemeRepository themeRepository;
-
     @Autowired
-    public ThemeServiceImpl(ThemeRepository themeRepository) {
-        this.themeRepository = themeRepository;
-    }
+    private ThemeRepository themeRepository;
 }
