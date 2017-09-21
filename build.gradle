@@ -19,15 +19,15 @@ repositories {
     mavenCentral()
 }
 
-//task copyClient(type: Copy) {
-//    from 'dist'
-//    into '../../Tomcat/rootResource'
-//}
+task copyClient(type: Copy) {
+    from 'dist'
+    into '../../Tomcat/rootResource'
+}
 
-//war.dependsOn = ['client:buildClient']
+war.dependsOn = ['client:buildClient']
 
 war {
-//    from 'client/dist'
+    from 'client/dist'
     baseName = 'intexsoft'
 }
 
