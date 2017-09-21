@@ -1,6 +1,8 @@
 package by.intexsoft.backend.config;
 
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import javax.servlet.Filter;
 
 /**
  * Java-based deployment descriptor which extends abstract class
@@ -26,4 +28,8 @@ public class ServletContextConfiguration extends AbstractAnnotationConfigDispatc
         return new String[]{"/api/*"};
     }
 
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[]{new OpenEntityManagerInViewFilter()};
+    }
 }

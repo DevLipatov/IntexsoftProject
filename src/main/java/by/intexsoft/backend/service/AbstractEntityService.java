@@ -29,7 +29,7 @@ public interface AbstractEntityService<T extends AbstractEntity> {
      * @param id - identifier of an entity in database
      * @return target entity
      */
-    T getOne(long id);
+    T findOne(long id);
 
     /**
      * Get all entities from database
