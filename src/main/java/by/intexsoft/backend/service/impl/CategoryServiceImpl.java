@@ -13,10 +13,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class CategoryServiceImpl extends AbstractEntityServiceImpl<Category> implements CategoryService {
 
-    private CategoryRepository categoryRepository;
-
     @Autowired
-    public CategoryServiceImpl(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
-    }
+    CategoryRepository categoryRepository;
 }
