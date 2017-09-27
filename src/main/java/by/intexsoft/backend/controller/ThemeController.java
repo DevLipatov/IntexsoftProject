@@ -25,7 +25,7 @@ public class ThemeController {
      * Get all themes from database
      */
     @RequestMapping(value = "/themes")
-    public List<Theme> getAllAuthors() {
+    public List<Theme> getAllThemes() {
         return themeService.findAll();
     }
 

@@ -4,6 +4,12 @@
     <tr *ngFor="let category of categories">
       <td>{{category?.id}}</td>
       <td>{{category?.name}}</td>
+      <td>
+        <tr *ngFor="let theme of category?.themes">
+          <td>{{theme?.title}}</td>
+          <td>{{theme?.content}}</td>
+        </tr>
+      </td>
     </tr>
   </table>
 </div>

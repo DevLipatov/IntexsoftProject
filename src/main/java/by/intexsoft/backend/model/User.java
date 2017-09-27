@@ -16,15 +16,6 @@ public class User extends AbstractEntity {
 
     private static final long serialVersionUID = 6015196365539799130L;
 
-    public User(User user) {
-    }
-
-    public User(String username, String password, List<Authority> authorities) {
-        this.username = username;
-        this.password = password;
-        this.authorities = authorities;
-    }
-
     @Column(name = "username")
     public String username;
 

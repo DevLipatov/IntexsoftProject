@@ -9,7 +9,6 @@ import java.util.List;
  */
 @Entity
 @Table(name = "category")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Category extends AbstractEntity {
 
     private static final long serialVersionUID = -7036463004146365704L;
@@ -17,6 +16,7 @@ public class Category extends AbstractEntity {
     @Column(name = "name")
     public String name;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("category")
     public List<Theme> themes;
 }
