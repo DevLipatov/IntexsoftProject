@@ -1,0 +1,14 @@
+md-toolbar button {
+  margin: 5px;
+  border-radius: 5px;
+  alignment: right;
+}
+
+md-toolbar {
+  width: 900px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}

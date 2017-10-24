@@ -1,0 +1,6 @@
+md-toolbar button {
+  flex: 0 0 auto;
+  margin: 5px;
+  border-radius: 5px;
+  alignment: right;
+}

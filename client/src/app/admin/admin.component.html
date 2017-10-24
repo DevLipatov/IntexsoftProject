@@ -1,0 +1,58 @@
+<md-tab-group *ngIf="!showDetailsFlag">
+  <md-tab *ngIf="isAdmin || isResearcher" label="New themes" (click)="findNew()">
+    <table>
+      <tr *ngFor="let theme of themes">
+        <td>{{theme.title}}</td>
+        <td>{{theme.category.name}}</td>
+        <td>{{theme.status}}</td>
+        <td>
+          <button md-raised-button color="primary" (click)="onManageClick(theme)">Manage</button>
+        </td>
+      </tr>
+    </table>
+  </md-tab>
+  <md-tab *ngIf="isAdmin || isResearcher" label="Deleted themes" (click)="findDeleted()">
+    <table>
+      <tr *ngFor="let theme of themes">
+        <td>{{theme.title}}</td>
+        <td>{{theme.category.name}}</td>
+        <td>{{theme.status}}</td>
+        <td>
+          <button md-raised-button color="primary" (click)="onManageClick(theme)">Manage</button>
+        </td>
+      </tr>
+    </table>
+  </md-tab>
+  <md-tab *ngIf="isAdmin" label="Users">
+  </md-tab>
+</md-tab-group>
+
+<md-card class="card" *ngIf="showDetailsFlag">
+  <md-card-header>
+    <md-card-title>
+      <input mdInput placeholder={{selectedTheme.title}} [(ngModel)]="selectedTheme.title" name="title">
+    </md-card-title>
+    <md-card-subtitle>Category:
+      <md-select placeholder={{selectedTheme.category.name}} [(ngModel)]="selectedTheme.category" name="category">
+        <md-option *ngFor="let category of categories" [value]="category">
+          {{category.name}}
+        </md-option>
+      </md-select>
+      <md-select placeholder="status" [(ngModel)]="selectedTheme.status" name="category">
+        <md-option *ngFor="let status of statuses" [value]="status">
+          {{status}}
+        </md-option>
+      </md-select>
+    </md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"
+       alt="Photo of a Shiba Inu">
+  <md-card-content>
+    <textarea mdInput placeholder={{selectedTheme.content}} [(ngModel)]="selectedTheme.content"
+              name="content"></textarea>
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button color="primary" (click)="onSaveClick(selectedTheme)">Save</button>
+    <button md-raised-button color="primary" (click)="onCloseClick()">Close</button>
+  </md-card-actions>
+</md-card>

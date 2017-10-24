@@ -1,0 +1,11 @@
+<form class="modal-content animate">
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="Username" [(ngModel)]="user.username" name="title">
+  </md-form-field>
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="Password" [(ngModel)]="user.password" name="title">
+  </md-form-field>
+  <button md-raised-button color="primary" (click)="onLoginClick()" translate >{{'Log in' | translate}}</button>
+  <button md-raised-button color="primary" routerLink="/home">{{'Cancel' | translate}}</button>
+</form>
+

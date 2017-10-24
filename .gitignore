@@ -1,0 +1,7 @@
+/.gradle/
+/.idea/
+/build/
+/logs/
+/out/
+/CATALINA_HOME_IS_UNDEFINED/
+gradle.properties

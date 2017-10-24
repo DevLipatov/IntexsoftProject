@@ -1,0 +1,18 @@
+<div class="example-container mat-elevation-z8">
+  <md-toolbar *ngFor="let category of categories">
+    <button *ngIf="category?.themes.length != 0" md-raised-button color="primary" class="button"
+            (click)="onCategorySelect(category)">
+      {{category?.name}}
+    </button>
+  </md-toolbar>
+</div>
+<form *ngIf="isAdmin" class="modal-content animate">
+  <md-form-field class="example-full-width">
+    <input mdInput [(ngModel)]="newCategory.name" placeholder="{{'Category name' |translate}}" name="title">
+  </md-form-field>
+  <button md-raised-button color="primary" (click)="add()" translate>Add category</button>
+  <button *ngIf="isLogged" md-raised-button color="primary" routerLink="/theme-create">{{'Add new theme' | translate}}
+  </button>
+</form>
+<app-theme [parentData]="selectedCategoryName"></app-theme>
+
