@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.loginService.log(this.user)
       .then(result => {
         localStorage.setItem("username", result.username);
-        localStorage.setItem("role", result.role)
+        localStorage.setItem("role", result.role);
         localStorage.setItem("token", result.token);
         this.router.navigate(['home']);
       })
