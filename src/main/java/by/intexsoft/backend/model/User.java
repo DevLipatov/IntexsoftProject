@@ -1,12 +1,9 @@
 package by.intexsoft.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.List;
-
 import static javax.persistence.FetchType.EAGER;
-import static javax.persistence.FetchType.LAZY;
 
 /**
  * User model for user entities
@@ -44,12 +41,4 @@ public class User extends AbstractEntity {
             inverseJoinColumns = @JoinColumn(name = "authority_id"))
     @JsonIgnoreProperties("users")
     public List<Authority> authorities;
-//
-//    @OneToMany(mappedBy = "user", fetch = LAZY)
-//    @JsonIgnoreProperties("user")
-//    public List<Theme> themes;
-//
-//    @OneToMany(mappedBy = "user", fetch = LAZY)
-//    @JsonIgnoreProperties("user")
-//    public List<Comment> comments;
 }

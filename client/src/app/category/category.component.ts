@@ -44,7 +44,7 @@ export class CategoryComponent implements OnInit {
     // this.categoryService.add(this.newCategory);
     this.categoryService.add(this.newCategory)
       .then(result =>
-        this.snackBar.open("Theme successfully created", "Close", {duration: 8000}))
+        this.snackBar.open("Category successfully created", "Close", {duration: 8000}))
       .catch(error =>
         this.snackBar.open("Cann`t add category", "Close", {duration: 8000}))
   }

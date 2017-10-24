@@ -8,6 +8,4 @@ import javax.persistence.*;
  */
 @MappedSuperclass
 public class AbstractEntity extends AbstractPersistable<Long> {
-
-    private static final long serialVersionUID = 7219127246357342388L;
 }

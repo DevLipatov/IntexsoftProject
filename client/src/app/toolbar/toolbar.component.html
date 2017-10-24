@@ -1,11 +1,10 @@
 <md-toolbar color="primary">
   <span>Critique Kitchen</span>
-  <span class="spacer"></span>
   <button *ngIf="isAdmin || isResearcher" md-raised-button color="primary" routerLink="/administration">Administration
   </button>
   <button md-raised-button color="primary" routerLink="/home">{{'Home' | translate}}</button>
+  <label>{{'Hello' | translate}} {{username}}</label>
   <button *ngIf="!isLogged" md-raised-button color="primary" routerLink="/register">{{'Register' | translate}}</button>
   <button *ngIf="!isLogged" md-raised-button color="primary" routerLink="/login">{{'Log in' | translate}}</button>
   <button *ngIf="isLogged" md-raised-button color="warn" (click)="logOut()">{{'Log out' | translate}}</button>
-  <label>{{'Hello' | translate}} {{username}}</label>
 </md-toolbar>

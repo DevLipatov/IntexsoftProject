@@ -91,7 +91,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {enableTracing:true}),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

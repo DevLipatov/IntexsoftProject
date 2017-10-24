@@ -19,8 +19,18 @@
 </div>
 <hr>
 <div *ngIf="showDetails">
-  {{currentTheme.title}}
-  {{currentTheme.category.name}}
-  {{currentTheme.content}}
-  <button md-raised-button color="primary" (click)="onHideDetails()">{{'Close' | translate}}</button>
+  <md-card>
+    <md-card-header>
+      <md-card-title>{{currentTheme.title}}</md-card-title>
+      <md-card-subtitle>{{'Category' | translate}}: {{currentTheme.category.name}}</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"
+         alt="Photo of a Shiba Inu">
+    <md-card-content>
+      <p>{{currentTheme.content}}</p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-raised-button color="primary" (click)="onHideDetails()">{{'Close' | translate}}</button>
+    </md-card-actions>
+  </md-card>
 </div>
