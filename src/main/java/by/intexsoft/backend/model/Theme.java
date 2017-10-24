@@ -1,6 +1,7 @@
 package by.intexsoft.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Table(name = "theme")
 public class Theme extends AbstractEntity {
 
-    private static final long serialVersionUID = 4321421752167640912L;
+    private static final long serialVersionUID = 8268457375860410019L;
 
     @Column(name = "title")
     public String title;
@@ -19,15 +20,15 @@ public class Theme extends AbstractEntity {
     @Column(name = "content")
     public String content;
 
+    @Column(name = "status")
+    public String status;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties("themes")
     public Category category;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    public User user;
-
     @OneToMany(mappedBy = "theme", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("theme")
     public List<Comment> comments;
 }

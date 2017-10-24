@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.List;
+
+import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
 
 /**
@@ -16,22 +18,38 @@ public class User extends AbstractEntity {
 
     private static final long serialVersionUID = 6015196365539799130L;
 
+    public User() {
+    }
+
+    /**
+     * Constructor for the purposes of authentication
+     *
+     * @param user to get details of
+     */
+    public User(User user) {
+        this.username = user.username;
+        this.password = user.password;
+        this.authorities = user.authorities;
+    }
+
     @Column(name = "username")
     public String username;
 
     @Column(name = "password")
     public String password;
 
-    @ManyToMany
-    @JsonManagedReference
+    @ManyToMany(fetch = EAGER)
     @JoinTable(name = "users_authorities",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "authority_id"))
+    @JsonIgnoreProperties("users")
     public List<Authority> authorities;
-
-    @OneToMany(mappedBy = "user", fetch = LAZY)
-    public List<Theme> themes;
-
-    @OneToMany(mappedBy = "user", fetch = LAZY)
-    public List<Comment> comments;
+//
+//    @OneToMany(mappedBy = "user", fetch = LAZY)
+//    @JsonIgnoreProperties("user")
+//    public List<Theme> themes;
+//
+//    @OneToMany(mappedBy = "user", fetch = LAZY)
+//    @JsonIgnoreProperties("user")
+//    public List<Comment> comments;
 }

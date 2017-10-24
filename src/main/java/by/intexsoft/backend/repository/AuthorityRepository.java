@@ -9,4 +9,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface AuthorityRepository extends JpaRepository<Authority, Long> {
+    /**
+     * Find authority by it name
+     *
+     * @param authority - authority name
+     * @return {@link Authority} instance
+     */
+    Authority findByAuthority(String authority);
 }

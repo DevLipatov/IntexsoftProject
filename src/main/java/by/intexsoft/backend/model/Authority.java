@@ -1,13 +1,10 @@
 package by.intexsoft.backend.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 /**
  * Simple blueprint for authority entity. Corresponding table holds information
@@ -18,7 +15,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Authority extends AbstractEntity implements GrantedAuthority {
 
-    private static final long serialVersionUID = 7346118302006431092L;
+    private static final long serialVersionUID = 7258273500531914075L;
 
     @Column(name = "authority")
     public String authority;
@@ -27,8 +24,4 @@ public class Authority extends AbstractEntity implements GrantedAuthority {
     public String getAuthority() {
         return this.authority;
     }
-
-    @ManyToMany(mappedBy = "authorities")
-    @JsonBackReference
-    public List<User> users;
 }

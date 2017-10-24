@@ -9,5 +9,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    /**
+     * Find user by it name
+     *
+     * @param username - name of the user
+     * @return {@link User} instance
+     */
     User findByUsername(String username);
 }

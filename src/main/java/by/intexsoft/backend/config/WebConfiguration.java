@@ -1,5 +1,6 @@
 package by.intexsoft.backend.config;
 
+import by.intexsoft.backend.service.ThemeService;
 import by.intexsoft.backend.service.impl.ThemeServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +21,7 @@ public class WebConfiguration {
      * @return instance of an ThemeServiceImpl class
      */
     @Bean
-    public ThemeServiceImpl themeService() {
+    public ThemeService themeService() {
         return new ThemeServiceImpl();
     }
 }
