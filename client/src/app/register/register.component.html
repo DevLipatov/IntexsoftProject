@@ -1,0 +1,10 @@
+<form class="modal-content animate">
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="{{'Username' | translate}}" [(ngModel)]="newUser.username" name="title">
+  </md-form-field>
+  <md-form-field class="example-full-width">
+    <input mdInput placeholder="{{'Password' | translate}}" [(ngModel)]="newUser.password" name="title">
+  </md-form-field>
+  <button md-raised-button color="primary" (click)="add()">{{'Register' | translate}}</button>
+  <button md-raised-button color="primary" routerLink="/home">{{'Cancel' | translate}}</button>
+</form>

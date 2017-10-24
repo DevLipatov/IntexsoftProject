@@ -10,6 +10,12 @@ interface ICategoryService {
    * @returns {Promise<Category[]>}
    */
   findAll(): Promise<Category[]>;
+
+  /**
+   * Method to put category to database
+   * @returns {void}
+   */
+  add(category: Category): Promise<Category>;
 }
 
 export default ICategoryService;

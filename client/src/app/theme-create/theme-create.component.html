@@ -1,0 +1,26 @@
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="{{'Theme title' | translate}}" [(ngModel)]="newTheme.title" name="title">
+      </md-form-field>
+    </td>
+  <tr>
+    <td>
+      <md-select placeholder="{{'Category' | translate}}" [(ngModel)]="newTheme.category" name="category">
+        <md-option *ngFor="let category of categories" [value]="category">
+          {{category.name}}
+        </md-option>
+      </md-select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <md-form-field class="example-full-width">
+        <textarea mdInput placeholder="{{'Content' | translate}}" [(ngModel)]="newTheme.content" name="content"></textarea>
+      </md-form-field>
+    </td>
+  </tr>
+  <button md-raised-button color="primary" (click)="onAddThemeClick()" translate >{{'Save' | translate}}</button>
+  <button md-raised-button color="primary" routerLink="/home">{{'Cancel' | translate}}</button>
+</table>

@@ -1,11 +1,12 @@
 import Category from './category';
-import User from "./user";
 
+/**
+ * Representation of theme entity
+ */
 export default class Theme {
   id: number;
   title: string;
   content: string;
   category: Category;
-  user: User;
-  comments: Comment[];
+  status: String;
 }

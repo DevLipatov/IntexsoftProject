@@ -1,0 +1,26 @@
+<div *ngIf="!showDetails" class="container">
+  <hr>
+  <md-card class="card" *ngFor="let theme of themes">
+    <md-card-header>
+      <md-card-title>{{theme?.title}}</md-card-title>
+      <md-card-subtitle>{{'Category' | translate}}: {{theme?.category.name}}</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"
+         alt="Photo of a Shiba Inu">
+    <md-card-content>
+      <p>{{theme?.content}}</p>
+    </md-card-content>
+    <md-card-actions>
+      <button md-raised-button color="primary" (click)="onDetailsClick(theme)">{{'Details' | translate}}</button>
+      <button *ngIf="isAdmin" md-raised-button (click)="onDeleteClick(theme.id)" color="warn">{{'Delete' | translate}}
+      </button>
+    </md-card-actions>
+  </md-card>
+</div>
+<hr>
+<div *ngIf="showDetails">
+  {{currentTheme.title}}
+  {{currentTheme.category.name}}
+  {{currentTheme.content}}
+  <button md-raised-button color="primary" (click)="onHideDetails()">{{'Close' | translate}}</button>
+</div>

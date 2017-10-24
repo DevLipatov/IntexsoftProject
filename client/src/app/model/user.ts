@@ -1,5 +1,11 @@
+import Authority from "./authority";
+
+/**
+ * Representation of user entity
+ */
 export default class User {
   id: number;
-  name: string;
-  info: string;
+  username: string;
+  password: string;
+  authorities: Authority[];
 }
