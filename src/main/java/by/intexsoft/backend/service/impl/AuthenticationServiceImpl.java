@@ -58,7 +58,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (token == null) return null;
         Jws<Claims> tokenData = Jwts.parser().setSigningKey(KEY_WORD).parseClaimsJws(token);
         String username = tokenData.getBody().get("username").toString();
-        User user = userService.findByUsername(username);
         String password = tokenData.getBody().get("password").toString();
         List authorities = tokenData.getBody().get("scopes", List.class);
         return new UsernamePasswordAuthenticationToken(username, password,

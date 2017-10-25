@@ -24,6 +24,7 @@ public interface AuthenticationService {
 
     /**
      * Create JWT token
+     *
      * @param user - received user
      * @param password - user password
      * @return JWT token

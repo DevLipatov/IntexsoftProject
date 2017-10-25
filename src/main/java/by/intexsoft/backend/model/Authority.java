@@ -17,6 +17,9 @@ public class Authority extends AbstractEntity implements GrantedAuthority {
 
     private static final long serialVersionUID = 7258273500531914075L;
 
+    /**
+     * Maps field to the column "authority" in database. Name of the authority
+     */
     @Column(name = "authority")
     public String authority;
 

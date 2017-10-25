@@ -15,13 +15,15 @@ public interface UserService extends AbstractEntityService<User> {
 
     /**
      * Save user to database
+     *
      * @param user - saved {@link User}
-     * @return
+     * @return - saved {@link User} entity
      */
     User register(User user);
 
     /**
      * Find all users
+     *
      * @return list of {@link User} instances
      */
     List<User> findAll();

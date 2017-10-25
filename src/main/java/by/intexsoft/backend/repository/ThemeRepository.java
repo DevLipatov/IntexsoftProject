@@ -27,15 +27,19 @@ public interface ThemeRepository extends JpaRepository<Theme, Long> {
     List<Theme> findByCategoryName(String name);
 
     /**
-     * @param name
-     * @param status
-     * @return
+     * Find all themes by their category name and status
+     *
+     * @param name - category name
+     * @param status - status of the themes
+     * @return list of themes
      */
     List<Theme> findByCategory_NameAndStatus(String name, String status);
 
     /**
-     * @param status
-     * @return
+     * Find all themes with same requested status
+     *
+     * @param status - status of the themes
+     * @return - list of themes
      */
     List<Theme> findByStatus(String status);
 }

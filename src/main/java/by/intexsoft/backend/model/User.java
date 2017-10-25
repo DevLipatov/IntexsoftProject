@@ -29,12 +29,21 @@ public class User extends AbstractEntity {
         this.authorities = user.authorities;
     }
 
+    /**
+     * Maps field to the column "username" in database. Name of the user
+     */
     @Column(name = "username")
     public String username;
 
+    /**
+     * Maps field to the column "password" in database. Password of the user
+     */
     @Column(name = "password")
     public String password;
 
+    /**
+     * Many-to-many relationship with table authorities
+     */
     @ManyToMany(fetch = EAGER)
     @JoinTable(name = "users_authorities",
             joinColumns = @JoinColumn(name = "user_id"),
